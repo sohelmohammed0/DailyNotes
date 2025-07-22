@@ -1,5 +1,5 @@
 
-# 🔧 Linux Commands Cheat Sheet: `grep`, `chmod`, `chown`
+# 🔧 Linux Commands: `grep`, `chmod`, `chown`
 
 This guide explains three powerful Linux commands used frequently in DevOps and system administration.
 
