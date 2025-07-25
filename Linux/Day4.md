@@ -115,3 +115,5 @@ ls -l file.txt    # Check owner and group
 | `chown` | Change file/folder ownership            |
 
 > 🧠 **Pro Tip**: Always double-check permissions and ownership using `ls -l` after making changes!
+
+
