@@ -1,5 +1,5 @@
 
-# 📚 Git Branching Cheat Sheet with Real-World Examples
+# 📚 Introdution to Git Branching
 
 This guide summarizes essential Git branching operations with clear examples useful for DevOps and software development.
 
