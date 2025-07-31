@@ -1,4 +1,4 @@
-# 📘 Git Merging - Beginner Friendly Guide
+# 📘 Git Merging
 
 ## 🔀 What is Git Merging?
 
