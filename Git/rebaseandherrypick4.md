@@ -148,3 +148,15 @@ git log --oneline
 
 - Never rebase **shared branches** unless you coordinate with teammates.
 - Cherry-picking is useful but can cause **duplicate commit issues** if not tracked properly.
+
+
+# what is interactive Rebase?
+- Interactive rebase (rebase -i) allows you to edit, reorder, squah or delete commits before integrating them into the current branch history.
+- Its extremely useful for cleaning up commit history before merging a feature branch or sharing code
+
+# Why it is used:
+- To squash multiple commits in to one
+- To reorder commits logically
+- To edit commit messages for clarity
+- To remove unnecessary commits
+- To split one commit in to multiple
