@@ -150,13 +150,131 @@ git log --oneline
 - Cherry-picking is useful but can cause **duplicate commit issues** if not tracked properly.
 
 
-# what is interactive Rebase?
-- Interactive rebase (rebase -i) allows you to edit, reorder, squah or delete commits before integrating them into the current branch history.
-- Its extremely useful for cleaning up commit history before merging a feature branch or sharing code
 
-# Why it is used:
-- To squash multiple commits in to one
-- To reorder commits logically
-- To edit commit messages for clarity
-- To remove unnecessary commits
-- To split one commit in to multiple
+# Git Interactive Rebase, Restore, and Reset
+
+---
+
+## 🔄 What is Interactive Rebase?
+
+**`git rebase -i`** allows you to interactively modify commit history.
+
+### 🧠 Why use it?
+- ✅ Squash multiple commits into one
+- 🔄 Reorder commits
+- 📝 Edit commit messages
+- ❌ Remove unnecessary commits
+- 🔪 Split a commit into smaller ones
+
+---
+
+### ✅ Example: Interactive Rebase
+
+Assume commit history:
+```
+A---B---C---D (feature)
+```
+
+You want to:
+- Squash C & D into one
+- Edit message of B
+
+Run:
+```bash
+git rebase -i HEAD~3
+```
+
+You’ll see:
+```
+pick B some message
+pick C added feature 1
+pick D added more to feature 1
+```
+
+Change to:
+```
+pick B some message
+squash C added feature 1
+squash D added more to feature 1
+```
+
+Then edit the final commit message. Done!
+
+---
+
+## 🧽 git restore
+
+Restores file(s) in the working directory from:
+- Last commit
+- A specific branch or stash
+
+### ✍️ Example:
+```bash
+git restore file.txt
+```
+→ Restores `file.txt` to last committed version.
+
+```bash
+git restore --source=feature file.txt
+```
+→ Restores `file.txt` from `feature` branch.
+
+```bash
+git restore --staged file.txt
+```
+→ Unstages a file (same as `git reset HEAD file.txt`)
+
+---
+
+## 🔙 git reset
+
+Changes your current HEAD and can modify **staging area** and/or **working directory**.
+
+---
+
+### 1️⃣ git reset --soft <commit>
+- Moves HEAD to `<commit>`
+- Keeps changes staged
+
+```bash
+git reset --soft HEAD~1
+```
+→ Undo last commit, but keep changes staged.
+
+---
+
+### 2️⃣ git reset --mixed <commit> (default)
+- Moves HEAD to `<commit>`
+- Unstages changes (files stay in working dir)
+
+```bash
+git reset --mixed HEAD~1
+```
+→ Undo last commit, unstage the changes.
+
+---
+
+### 3️⃣ git reset --hard <commit>
+- Moves HEAD to `<commit>`
+- Discards **everything** (staging + working directory)
+
+```bash
+git reset --hard HEAD~1
+```
+→ Completely remove last commit & changes.
+
+⚠️ **Use with caution!**
+
+---
+
+## 🧠 Summary Table
+
+| Command                     | Affects Commit | Affects Staging | Affects Working Dir | Use Case                             |
+|----------------------------|----------------|------------------|---------------------|--------------------------------------|
+| `git reset --soft`         | ✅              | ✅               | ❌                  | Undo commit, keep changes staged     |
+| `git reset --mixed`        | ✅              | ✅ (unstage)     | ❌                  | Unstage files after undoing commit   |
+| `git reset --hard`         | ✅              | ✅               | ✅                  | Wipe commit & local changes          |
+| `git restore`              | ❌              | ✅ or ❌         | ✅                  | Restore specific files               |
+
+
+    
