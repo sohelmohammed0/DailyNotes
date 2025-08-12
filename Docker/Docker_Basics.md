@@ -15,7 +15,7 @@ The core component of Docker, responsible for creating and managing containers.
 
 ---
 
-## 3. Docker Image
+## 3. Docker Image.
 A **read-only blueprint** containing application code, dependencies, libraries, environment variables, and configurations.
 
 **Example:** `python:3.10-slim` contains Python 3.10 runtime with minimal OS packages.
