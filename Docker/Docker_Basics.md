@@ -1,8 +1,5 @@
 
-# Docker Complete Guide (Beginner to Interview-Ready)
-
-This document covers all important Docker concepts, definitions, differences, commands, best practices, and interview questions with answers.
-
+# Docker Complete Guide
 ---
 
 ## 1. What is Docker?
