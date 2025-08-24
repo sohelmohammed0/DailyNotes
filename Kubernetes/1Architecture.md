@@ -1,4 +1,4 @@
-## Basic Kubernetes Architecture
+# Basic Kubernetes Architecture
 
 ![Basic Kubernetes Architecture](kubernetes-cluster-architecture.svg)
 
