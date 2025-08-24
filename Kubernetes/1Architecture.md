@@ -1,3 +1,5 @@
+![Basic Kubernetes Architecture](kubernetes-cluster-architecture.svg)
+
 # CLUSTER ARCHITECTURE:
 
 - A Kubernetes cluster consists of control plane plus a set of worker machines, called nodes, that run containerized applications
