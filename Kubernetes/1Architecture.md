@@ -2,7 +2,6 @@
 
 ![Basic Kubernetes Architecture](kubernetes-cluster-architecture.svg)
 
-*Figure: Basic Kubernetes Architecture*
 
 # CLUSTER ARCHITECTURE:
 
