@@ -4,6 +4,9 @@ This document explains the basics of Kubernetes concepts covered in
 today's class, with examples, tasks, and references.\
 It is designed so that even a **complete beginner** can understand.
 
+- Pods are ephemeral, if they die, kubernetes replaces them (Via controller like deployments)
+
+
 ------------------------------------------------------------------------
 
 ## 1. Ways of Communicating with the Control Plane
@@ -23,38 +26,38 @@ communicate with it in different ways:
 
 ## 2. What is a Pod?
 
--   A **Pod** is the smallest deployable unit in Kubernetes.\
+-   A **Pod** is the smallest deployable unit in Kubernetes.
 -   It wraps **one or more containers** together with storage and
-    network resources.\
+    network resources.
 -   Containers inside a Pod share the same **IP address** and
     **namespace**.
 
 ### Difference Between Pod and Container
 
+*Container*
   -----------------------------------------------------------------------
-  **Container**                                **Pod**
-  -------------------------------------------- --------------------------
-  Runs a single application or process.        Can hold one or multiple
-                                               containers.
-
-  Managed by Docker or container runtime.      Managed by Kubernetes.
-
-  Limited in networking and scaling.           Provides abstraction,
-                                               scaling, networking, and
-                                               orchestration.
+  - Runs a single application or process.        
+  - Managed by Docker or container runtime.
+  - Limited in networking and scaling.
   -----------------------------------------------------------------------
 
-------------------------------------------------------------------------
+ *Pod*
+-------------------------------------------------------------------------
+  - Can hold one or multiple containers.
+  - Managed by Kubernetes.
+  - Provides abstraction, scaling, networking, and orchestration.
+
+------------------------------------------------------------------------    
 
 ## 3. Communication Between Pods and Control Plane
 
-When you create a Pod, the **control plane** schedules it on a Node.\
+When you create a Pod, the **control plane** schedules it on a Node.
 Communication happens through the **Kubernetes API server**.
 
 ### Pod Creation Methods
 
 1.  **Using kubectl (Imperative)**
-    -   Directly using commands.\
+    -   Directly using commands.
 
     -   Example:
 
@@ -65,7 +68,7 @@ Communication happens through the **Kubernetes API server**.
     -   **Imperative** means you tell Kubernetes *exactly what to do,
         step by step*.
 2.  **Using Manifest File (Declarative)**
-    -   You describe the desired state in a YAML file.\
+    -   You describe the desired state in a YAML file.
 
     -   Example `pod.yaml`:
 
@@ -111,23 +114,23 @@ Communication happens through the **Kubernetes API server**.
 Kubernetes resources evolve. API versions define stability:
 
 1.  **Alpha**
-    -   Early stage, may be unstable.\
+    -   Early stage, may be unstable.
     -   Disabled by default.
 2.  **Beta**
-    -   Tested more, enabled by default.\
+    -   Tested more, enabled by default.
     -   Still subject to change.
 3.  **Stable (GA)**
-    -   Fully tested, safe for production.\
+    -   Fully tested, safe for production.
     -   Example: `v1`.
 
 ------------------------------------------------------------------------
 
 ## 5. API Groups
 
--   Organizes APIs into categories.\
+-   Organizes APIs into categories.
 -   Example groups:
-    -   `core` (pods, services, configmaps)\
-    -   `apps` (deployments, statefulsets)\
+    -   `core` (pods, services, configmaps)
+    -   `apps` (deployments, statefulsets)
     -   `batch` (jobs, cronjobs)
 
 ------------------------------------------------------------------------
@@ -135,24 +138,24 @@ Kubernetes resources evolve. API versions define stability:
 ## 6. Namespaces and Scope
 
 -   A **Namespace** is a way to divide cluster resources between
-    multiple users or projects.\
+    multiple users or projects.
 -   Example:
-    -   `default` (default namespace)\
-    -   `kube-system` (system components)\
+    -   `default` (default namespace)
+    -   `kube-system` (system components)
     -   `dev`, `prod` (custom environments)
 
 **Scope:**\
-- **Namespaced resources:** Pods, Services, ConfigMaps\
+- **Namespaced resources:** Pods, Services, ConfigMaps
 - **Cluster-wide resources:** Nodes, PersistentVolumes
 
 ------------------------------------------------------------------------
 
 ## 7. What is "Kind"?
 
--   `kind` defines the type of Kubernetes object in a YAML manifest.\
+-   `kind` defines the type of Kubernetes object in a YAML manifest.
 -   Example:
-    -   Pod\
-    -   Deployment\
+    -   Pod
+    -   Deployment
     -   Service
 
 ------------------------------------------------------------------------
@@ -218,11 +221,11 @@ Kubernetes manifests use YAML. Basic data types:
 
 ## 10. Best Practices
 
--   Use **Declarative YAML** over Imperative commands.\
+-   Use **Declarative YAML** over Imperative commands.
 
--   Keep YAML files under **version control (Git)**.\
+-   Keep YAML files under **version control (Git)**.
 
--   Use **namespaces** for environment separation (dev/prod).\
+-   Use **namespaces** for environment separation (dev/prod).
 
 -   Always check resource status:
 
@@ -236,11 +239,11 @@ Kubernetes manifests use YAML. Basic data types:
 
 ## 📖 References & Useful Links
 
--   [Kubernetes Official Documentation](https://kubernetes.io/docs/)\
+-   [Kubernetes Official Documentation](https://kubernetes.io/docs/)
 -   [kubectl Cheat
-    Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)\
--   [Killer Koda Free Labs](https://killercoda.com/kubernetes)\
--   [YAML Basics](https://www.yaml.org/spec/)\
+    Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+-   [Killer Koda Free Labs](https://killercoda.com/kubernetes)
+-   [YAML Basics](https://www.yaml.org/spec/)
 -   [Kubernetes Python
     Client](https://github.com/kubernetes-client/python)
 
