@@ -1,4 +1,4 @@
-# Kubernetes Classroom Notes - Beginner Friendly Guide
+# Kubernetes Classroom Notes
 
 This document explains the basics of Kubernetes concepts covered in
 today's class, with examples, tasks, and references.\
