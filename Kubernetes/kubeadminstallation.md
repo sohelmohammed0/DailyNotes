@@ -86,6 +86,8 @@ kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/we
 
 ``` bash
 # Run the join command that was output by kubeadm init.
-# Example:
+# Replace <TOKEN> with the actual token you receive after running kubeadm init
+# Example: 
+
 sudo kubeadm join <MASTER_PRIVATE_IP>:6443 --token <TOKEN>     --discovery-token-ca-cert-hash sha256:<HASH>     --cri-socket=unix:///var/run/cri-dockerd.sock
 ```
