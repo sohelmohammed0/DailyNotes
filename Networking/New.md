@@ -1,7 +1,6 @@
 # Networking & IP Addressing - Beginner to Expert Roadmap
 
-This guide is designed as **world-class notes** for anyone starting from zero to mastering **IP addressing, subnetting, and networking fundamentals**. It includes explanations, tables, examples, tasks (with small hints), useful tips, best practices, and a step-by-step roadmap. Every topic has a short task and a quick hint so you can practice as you go.
-
+**IP addressing, subnetting, and networking fundamentals**.
 ---
 
 ## Table of Contents
